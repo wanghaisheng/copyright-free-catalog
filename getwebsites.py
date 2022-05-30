@@ -3,18 +3,18 @@ import pprint
 
 # Or PROXIES = None
 PROXIES = [{
-    'http': 'http://192.168.2.207:1080',
-    'https': 'http://192.168.2.207:1080'
+    'http': 'socks5://127.0.0.1:1080',
+    'https': 'socks5://127.0.0.1:1080'
 }]
 
 # Or MagicGoogle()
 mg = MagicGoogle(PROXIES)
 
 #  Crawling the whole page
-result = mg.search_page(query='python')
+# result = mg.search_page(query='python')
 
 # Crawling url
-for url in mg.search_url(query='python'):
+for url in mg.search_url(query='royalty free music & copyright free music',num=200):
     pprint.pprint(url)
     
 # Output
@@ -31,8 +31,8 @@ for url in mg.search_url(query='python'):
 # 'https://www.continuum.io/downloads'
 
 # Get {'title','url','text'}
-for i in mg.search(query='python', num=1):
-    pprint.pprint(i)
+# for i in mg.search(query='python', num=1):
+    # pprint.pprint(i)
     
 # Output
 # {'text': 'The official home of the Python Programming Language.',
